@@ -10,14 +10,9 @@ default: &default
   timeout: 5000
 
 development:
-  # <<: *default
-  adapter: postgresql
-  encoding: utf8
-  port: 5432
-  # database: db/development.sqlite3
-  database: da5gl66qvmae18
-  username: uemspbeyfoucrn
-  password: ddSpcjc8iQmxqesUe01veCjLBi
+  <<: *default
+  database: db/development.sqlite3
+
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -27,5 +22,11 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  # <<: *default
+  # database: db/production.sqlite3
+  adapter: postgresql
+  encoding: utf8
+  port: 5432
+  database: da5gl66qvmae18
+  username: uemspbeyfoucrn
+  password: ddSpcjc8iQmxqesUe01veCjLBi
